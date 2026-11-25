@@ -1,16 +1,23 @@
 <h2>Product Details</h2>
 
-<h3>{{productName}}</h3>
+<h3>{{productName()}}</h3>
 
 <img [src]="productImage" width="200">
 
-<p>Description: {{productDescription}}</p>
+<p>Description: {{productDescription()}}</p>
 
 <p>Price: ${{productPrice}}</p>
 
-<p>Quantity: {{quantity}}</p>
+<p>Quantity: {{quantity()}}</p>
 
-<p>Availability: {{isAvailable ? 'Available' : 'Unavailable'}}</p>
+<button (click)="increase()">+</button>
+<p style="display: inline;">{{displayQuantity()}}</p>
+<button (click)="decrease()">-</button>
+
+<button (click)="update()">Update</button>
+<button (click)="addToCart()">Add to cart</button>
+
+<p>Availability: {{isAvailable() ? 'Available' : 'Unavailable'}}</p>
 
 <p>Discount: {{discountPercentage}}%</p>
 

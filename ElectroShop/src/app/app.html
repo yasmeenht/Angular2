@@ -1,5 +1,22 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<app-product-list></app-product-list>
-<app-product-details></app-product-details>
+<app-product-list></app-product-list> 
+<app-product-details
+  [productName]="productName"
+  [productDescription]="productDescription"
+  [productPrice]="productPrice"
+  [productImage]="productImage"
+  [quantity]="quantity"
+  [isAvailable]="isAvailable"
+  [discountPercentage]="discountPercentage"
+  (cartEvent)="receiveCart($event)">
+</app-product-details>
+
+<button (click)="changeProduct()">Change Product</button>
+
+<app-shopping-cart
+  [name] = "cartName"
+  [price] = "cartPrice"
+  [quantity] = "cartQuantity">
+</app-shopping-cart>
 <app-footer></app-footer>
